@@ -1,0 +1,48 @@
+Copyright (c) 2026 Samuel Posner. All rights reserved.
+
+DOT DASH FIRMWARE — PROPRIETARY LICENSE (BINARY DISTRIBUTION)
+
+This repository distributes compiled firmware images (the "Firmware") for Dot
+Dash devices. The Firmware is the proprietary property of the copyright holder.
+
+WHY THIS REPOSITORY IS PUBLIC
+
+Dot Dash devices fetch their updates directly from this repository over the
+public internet. The files must therefore be readable without authentication.
+That accessibility is a technical requirement of the update mechanism. It is
+not a grant of rights, and it does not place the Firmware in the public domain.
+
+WHAT IS PERMITTED
+
+The copyright holder grants a limited, non-exclusive, non-transferable,
+revocable licence to download and install the Firmware onto genuine Dot Dash
+hardware, for the purpose of operating that hardware.
+
+WHAT IS NOT PERMITTED
+
+Without prior written permission you may not:
+
+  * redistribute, mirror, resell, or bundle the Firmware;
+  * install or run it on any hardware other than genuine Dot Dash devices;
+  * modify or patch it, or distribute anything derived from it;
+  * reverse engineer, decompile, or disassemble it, except to the extent that
+    right cannot lawfully be excluded; or
+  * extract, reuse, or publish any credential, key, endpoint, or other
+    embedded material recovered from it.
+
+The last point is not merely contractual: these images address live services
+used by children. Responsible-disclosure reports are welcomed and should go to
+the copyright holder rather than being published.
+
+"Dot Dash" and the Dot Dash logo are trademarks of the copyright holder. No
+right to use them is granted by this licence.
+
+The Firmware incorporates third-party components under their own licences,
+including components licensed under the GNU Lesser General Public License. Those
+licences govern those components and are not affected by this one; see
+THIRD-PARTY-NOTICES.md in the firmware source distribution.
+
+THE FIRMWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY ARISING FROM OR IN CONNECTION WITH THE FIRMWARE OR
+ITS USE.
