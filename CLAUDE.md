@@ -10,9 +10,13 @@ file that triggers an update.
 ## The two release levers — do not touch unless asked in that message
 
 - `version.txt` here, and `FIRMWARE_VERSION` in each firmware `Globals.h`.
-- `Ota.ino` fetches `version.txt` and updates when `latestVersion >
+- `Ota.ino` fetches its line's version file and updates when `latestVersion >
   FIRMWARE_VERSION`. Bumping either one ships to every device in the field.
-- Both are at **3** today. Sam decides the moment updates go out.
+- **The binary must report the new number BEFORE the lever moves.** A device
+  that downloads an image still reporting the old version re-downloads it on
+  every boot, forever. Promote the bins first, move the lever last.
+- `version.txt` and `version-walkie.txt` are both at **4** (R4, 2026-11-07).
+  Sam decides the moment updates go out.
 
 ## Slots
 
@@ -21,13 +25,19 @@ file that triggers an update.
 | C3 | `dot-dash-code-t.bin` | `dot-dash-code.bin` |
 | C6 (small partition) | `dot-dash-code-c6-t.bin` | `dot-dash-code-c6.bin` |
 | C62 (large partition) | `dot-dash-code-c62-t.bin` | `dot-dash-code-c62.bin` |
+| walkie | `dot-dash-walkie-t.bin` | `dot-dash-walkie.bin` |
 
 Test bins are referenced by no firmware — they are loaded by pasting their URL
 into the device's Wi-Fi portal. Overwriting them is inert, which is why it needs
 no permission.
 
-Three lines, not two: the C6 fleet is split across two partition layouts and OTA
-cannot repartition, so one binary cannot serve both.
+Three shipping lines, not two: the C6 fleet is split across two partition
+layouts and OTA cannot repartition, so one binary cannot serve both.
+
+The walkie is a fourth line on its OWN release lever, `version-walkie.txt`.
+It is independent in both directions: a shipping release never needs it, and a
+walkie release never touches `version.txt`. Rev-1 walkie boards are USB only
+and never OTA at all.
 
 ## How bins get here
 
